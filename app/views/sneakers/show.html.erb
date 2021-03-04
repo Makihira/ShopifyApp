@@ -1,0 +1,17 @@
+<h1 class="display-4 text-primary">Sneakers#show</h1>
+<p>※「<%= @sneaker.name %>」の商品データ</p>
+<table class="table">
+    <tr><th width="200">ID</th>
+        <td><%= @sneaker.id %></td></tr>
+    <tr><th>Name</th>
+        <td><%= @sneaker.name %></td></tr>
+    <tr><th>Maker</th>
+        <td><%= @sneaker.maker %></td></tr>
+    <tr><th>Color</th>
+        <td><%= @sneaker.color %></td></tr>
+    <tr><th>Price</th>
+        <td><%= @sneaker.price %>円</td></tr>
+    <tr><th>Memo</th>
+        <td><%= @sneaker.memo %></td></tr>
+</table>
+<p><a href="/sneakers">&lt;&lt;※トップページに戻る</a></p>

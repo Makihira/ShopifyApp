@@ -1,0 +1,33 @@
+  <% if question.errors.any? %>
+    <div class="text-danger" id="error_explanation">
+      <h2>入力内容に誤りがあるため、質問を保存できませんでした:</h2>
+      <ul>
+        <% question.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for(question) do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :content %>
+      <%= f.text_area :content, rows:5, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+
+    <%= f.hidden_field :finished, {value:false} %>
+
+    <div>
+      <%= f.submit %>
+    </div>
+  <% end %>

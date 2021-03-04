@@ -1,0 +1,27 @@
+<h1 class="display-4 text-primary">Messages#index</h1>
+<p><%= @msg %></p>
+<table class="table">
+    <tr>
+        <th>Id</th><th>Title</th><th>Person</th><th colspan="2"></th>
+    </tr>
+    <% @data.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><a href="/messages/<%= obj.id %>"><%= obj.title %></a></td>
+        <td><%= obj.person.name %></td>
+        <td><a href="/messages/edit/<%= obj.id %>">Edit</a></td>
+        <td><a href="javascript:delData(<%= obj.id %>);">Delete</a></td>
+    </tr>
+    <% end %>
+</table>
+<script>
+function delData(num)
+{
+    if (confirm('このデータを削除しますか？'))
+    {
+        document.location = "/messages/delete/" + num;
+    }
+    return false;
+}
+</script>   
+         
